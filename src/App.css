@@ -1,38 +1,69 @@
-.App {
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(135deg, #f7f8fc 0%, #e1eaff 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.section {
+  padding: 60px 0;
+}
+
+.section h2 {
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: #2c3e50;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease-in-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.nav-link:hover {
+  color: #007bff !important;
+  transform: scale(1.05);
+  transition: all 0.2s ease;
+}
+
+.btn {
+  border-radius: 25px;
+  padding: 10px 20px;
+}
+
+a.btn:hover {
+  transform: scale(1.03);
+  transition: all 0.2s;
+}
+
+footer {
+  padding: 40px 0;
+  background-color: #f0f0f0;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+.bg-custom-blue {
+  background-color: #e8f0fe;  /* light blue */
+}
+
+.bg-custom-dark {
+  background-color: #1c1c1c;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bg-section-gray {
+  background-color: #f8f9fa;
 }
