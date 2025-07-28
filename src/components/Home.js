@@ -32,16 +32,6 @@ const AboutMe = () => {
           <p className="lead">
             Email: <a href="mailto:spdinesh3737@gmail.com">spdinesh3737@gmail.com</a>
           </p>
-
-          <a
-            href={resumePath}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-outline-primary me-3 mb-3"
-          >
-            <FaEye size={18} className="me-2" />
-            View Resume
-          </a>
         </Col>
       </Row>
 
