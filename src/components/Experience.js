@@ -10,17 +10,17 @@ const Experience = () => {
             tech: ["Python", "Tkinter", "Adobe", "AWS"]
         },
         {
-            position: "Software Engineer (Verizon AI & Data)",
-            employer: "HCLTech Limited",
-            duration: "Aug 2022 - Dec 2023",
-            description: "Worked on AI-driven solutions for Verizon Fixed Wireless Access project, contributing to $550M+ revenue and supporting 4.2M+ customer base. Built ETL pipelines from Teradata Enterprise Warehouse to GCP BigQuery or GCS using PySpark. Created data curation & data modeling for source-target mapping.",
+            position: "Java Backend Developer",
+            employer: "EPAM Systems",
+            duration: "Jan 2022 – July 2024",
+            description: "Led backend optimization initiatives that enhanced system performance and data accessibility across enterprise applications. Refined database queries and execution strategies, resulting in a 30% increase in API throughput and a 30% reduction in response times, significantly improving employee data retrieval efficiency. Diagnosed and resolved over 60 bugs across multiple projects, reducing critical issues by 25% and boosting overall system stability and user satisfaction. Automated CI/CD workflows to streamline deployment processes, achieving a 20% reduction in deployment times and enhancing delivery accuracy.",
             tech: ["Python", "SQL", "GCP", "PySpark"]
         },
         {
             position: "Software Engineer Intern",
-            employer: "HCLTech Limited",
+            employer: "EPAM Systems",
             duration: "Jan 2022 - June 2022",
-            description: "Trained on Python, SQL, GCP, PySpark with 80+ hands-on assignments. Designed Hospital Management System capstone project using Python, Tkinter, and SQLite. Built ETL pipelines on GCP Dataproc, extracting data from GCS, and loading processed data into GCS and BigQuery for both batch & streaming data. ",
+            description: "Developed secure RESTful web services using Spring Boot and Spring MVC, enhancing backend communication and data flow. Integrated Spring Security with advanced authentication techniques, ensuring zero security breaches during the internship period. Wrote unit tests using JUnit and Mockito, reducing code defects by 15% and improving API reliability. Gained hands-on experience in backend development by combining Spring frameworks with database tools for efficient data processing.",
             tech: ["Python", "SQL", "Tkinter", "GCP", "Teradata", "PySpark"]
         }
     ]
