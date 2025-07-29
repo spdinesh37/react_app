@@ -1,12 +1,16 @@
 import React from 'react';
 
 const Education = () => {
+   const logoPath = process.env.PUBLIC_URL + '/uab.png';
   return (
     <div className="mt-3">
       <h2 className="text-center mb-4">Education</h2>
 
       <div className="card mb-3 shadow-sm">
         <div className="card-body">
+          <a href="https://www.uab.edu/home/" target="_blank" rel="noopener noreferrer">
+            <img src={logoPath}  alt="Education Logo" className="card-logo" />
+          </a>
           <h5 className="card-title"> Master’s in Computer Science</h5>
           <h6 className="card-subtitle mb-2 text-muted">University of Alabama, Birmingham</h6>
           <p className="card-text">

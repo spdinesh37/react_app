@@ -23,13 +23,32 @@ body {
   border: none;
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease-in-out;
+  transition: color 0.2s ease, background 0.2s ease;
 }
 
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
+
+.card-logo {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 8vw;              /* Responsive width (8% of viewport width) */
+  max-width: 64px;         /* Limit max size */
+  min-width: 32px;         /* Avoid being too small */
+  height: auto;            /* Maintain aspect ratio */
+  object-fit: contain;
+  opacity: 0.9;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.card:hover .card-logo {
+  transform: scale(1.1) rotate(5deg); /* Interactive on hover */
+  opacity: 1;
+}
+
 
 .nav-link:hover {
   color: #007bff !important;
@@ -42,17 +61,31 @@ body {
   padding: 10px 20px;
 }
 
+@media (max-width: 576px) {
+  .btn {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1rem;
+  }
+}
+
+
 a.btn:hover {
   transform: scale(1.03);
   transition: all 0.2s;
 }
 
-footer {
+ footer {
   padding: 40px 0;
-  background-color: #f0f0f0;
   text-align: center;
   font-size: 14px;
-  color: #666;
+  color: #686767;
+} 
+@media (max-width: 576px) {
+  footer {
+      font-size: 13px;
+      padding: 30px 10px;
+  }
 }
 
 .bg-custom-blue {
