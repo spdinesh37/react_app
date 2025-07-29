@@ -100,3 +100,23 @@ a.btn:hover {
 .bg-section-gray {
   background-color: #f8f9fa;
 }
+
+.tech-badges-grid {
+  display: flex;
+  gap: 20px 24px; /* generous spacing */
+  margin-top: 10px;
+}
+
+.badge {
+  font-size: 0.85rem;
+  padding: 6px 12px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.badge:hover {
+  background-color: #15b300 !important; /* darker blue on hover */
+  color: #fff !important;
+  transform: scale(1.05);
+}

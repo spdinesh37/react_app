@@ -1,15 +1,22 @@
 import React from 'react';
 
 const Experience = () => {
+    const uablogo = process.env.PUBLIC_URL + '/uab.png';
+    const epamlogo = process.env.PUBLIC_URL + '/epamlogo.png';
+
     const experiences = [
         {
+            logo: uablogo,
+            link: "https://www.uab.edu/home/",
             position: "Graduate Assistant (Digitalization Lab)",
             employer: "University of Alabama, Birmingham",
             duration: "Apr 2024 - Present",
             description: "Working on Digital Preservation of historical records using Python Scripts from different universities and facilitating those records for future research across USA.",
             tech: ["Python", "Tkinter", "Adobe", "AWS"]
         },
-        {
+        {   
+            logo: epamlogo,
+            link: "https://www.epam.com/",
             position: "Java Backend Developer",
             employer: "EPAM Systems",
             duration: "Jan 2022 – July 2024",
@@ -17,6 +24,8 @@ const Experience = () => {
             tech: ["Python", "SQL", "GCP", "PySpark"]
         },
         {
+            logo: epamlogo,
+            link: "https://www.epam.com/",
             position: "Software Engineer Intern",
             employer: "EPAM Systems",
             duration: "Jan 2022 - June 2022",
@@ -30,13 +39,16 @@ const Experience = () => {
         {experiences.map((exp, idx) => (
                 <div key={idx} className="card mb-3 shadow-sm">
                   <div className="card-body">
+                    <a href={exp.link} target="_blank" rel="noopener noreferrer">
+                      <img src={exp.logo}  alt="Education Logo" className="card-logo" />
+                    </a>
                     <h5 className="card-title">{exp.position}</h5>
                     <h6 className="card-subtitle text-muted mb-2">{exp.employer}</h6>
                     <h6 className="card-subtitle text-muted mb-2">{exp.duration}</h6>
                     <p className="card-text">{exp.description}</p>
-                    <div className="d-flex flex-wrap mb-2">
+                    <div className="tech-badges-container">
                       {exp.tech.map((tech, i) => (
-                        <span key={i} className="badge bg-primary me-2 mb-2">{tech}</span>
+                        <span key={i} className="badge bg-primary">{tech}</span>
                       ))}
                     </div>
                   </div>
