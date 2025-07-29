@@ -30,7 +30,7 @@ function App() {
         <footer className="text-center py-4 mt-5">
           <p className="mb-0">© 2025 Dinesh Sripathi Panditharadhyula. All rights reserved.</p>
         </footer>
-              </div>
+      </div>
       </div>
     </>
   );
