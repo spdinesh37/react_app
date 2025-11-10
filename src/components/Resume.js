@@ -2,7 +2,7 @@ import React from 'react';
 import { FaEye, FaDownload } from 'react-icons/fa';
 
 const Resume = () => {
-  const resumePath = process.env.PUBLIC_URL + '/Dinesh-SP-Resume.pdf';
+  const resumePath = process.env.PUBLIC_URL + '/Dinesh_Sripathi_Panditharadhyula_Resume.pdf';
 
   return (
     <div className="text-center mt-5">
