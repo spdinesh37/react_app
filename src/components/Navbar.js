@@ -122,8 +122,7 @@ const Navbar = ({ darkMode, toggleTheme }) => {
                       color: isActive ? '#3b82f6' : (darkMode ? '#d1d5db' : '#374151'),
                       fontWeight: '500',
                     }}>
-                  
-``                    {link.label}
+                    {link.label}
                   </a>
                 </li>
               );
