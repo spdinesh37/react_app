@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
 
-const Experience = () => {
+const Experience = ({ darkMode = false }) => {
   const [isVisible, setIsVisible] = useState({});
   const [expandedCard, setExpandedCard] = useState(null);
   const uablogo = process.env.PUBLIC_URL + '/uab.png';
   const epamlogo = process.env.PUBLIC_URL + '/epamlogo.png';
 
   useEffect(() => {
+    // Immediately set all cards as visible
+    setIsVisible({ 'exp-1': true, 'exp-2': true, 'exp-3': true });
+    
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -60,7 +63,11 @@ const Experience = () => {
   ];
 
   return (
-    <div style={{ padding: '2rem 0' }}>
+    <div style={{ 
+      padding: '2rem 0',
+      minHeight: '100vh',
+      background: darkMode ? '#111827' : '#f3f4f6'
+    }}>
       <style>{`
         @keyframes slideInUp {
           from { opacity: 0; transform: translateY(30px); }
@@ -71,7 +78,7 @@ const Experience = () => {
           50% { transform: scale(1.05); }
         }
         .experience-card {
-          opacity: 0;
+          opacity: 1 !important;
         }
         .experience-card.visible {
           animation: slideInUp 0.6s ease forwards;
@@ -81,7 +88,6 @@ const Experience = () => {
         }
         .exp-card-hover:hover {
           transform: translateY(-5px);
-          box-shadow: 0 15px 35px rgba(0,0,0,0.15) !important;
         }
         .tech-badge {
           transition: all 0.2s ease;
@@ -93,12 +99,9 @@ const Experience = () => {
           transition: all 0.3s ease;
           cursor: pointer;
         }
-        .expand-btn:hover {
-          background: rgba(0,0,0,0.05);
-        }
       `}</style>
 
-      <div className="container">
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
         <h2 style={{
           textAlign: 'center',
           fontSize: 'clamp(2rem, 5vw, 2.5rem)',
@@ -112,9 +115,9 @@ const Experience = () => {
           💼 Professional Experience
         </h2>
 
-        <div className="row g-4">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
           {experiences.map((exp, index) => (
-            <div key={exp.id} className="col-12" id={exp.id}>
+            <div key={exp.id} id={exp.id}>
               <div 
                 className={`experience-card exp-card-hover ${isVisible[exp.id] ? 'visible' : ''}`}
                 style={{
@@ -122,15 +125,17 @@ const Experience = () => {
                 }}
               >
                 <div style={{
-                  background: 'white',
+                  background: darkMode ? '#1f2937' : 'white',
                   borderRadius: '1rem',
                   padding: '1.5rem',
-                  boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+                  boxShadow: darkMode 
+                    ? '0 4px 20px rgba(0,0,0,0.5)' 
+                    : '0 4px 20px rgba(0,0,0,0.08)',
                   border: `2px solid ${exp.color}20`,
                   borderLeft: `5px solid ${exp.color}`,
                 }}>
                   {/* Header */}
-                  <div className="d-flex align-items-start gap-3 mb-3">
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', marginBottom: '1rem' }}>
                     <a href={exp.link} target="_blank" rel="noopener noreferrer" style={{ flexShrink: 0 }}>
                       <img
                         src={exp.logo}
@@ -141,13 +146,13 @@ const Experience = () => {
                           objectFit: 'contain',
                           borderRadius: '0.5rem',
                           padding: '0.5rem',
-                          background: 'white',
+                          background: darkMode ? '#374151' : 'white',
                           boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
                         }}
                       />
                     </a>
                     <div style={{ flex: 1 }}>
-                      <div className="d-flex justify-content-between align-items-start flex-wrap gap-2">
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '0.5rem' }}>
                         <div>
                           <h5 style={{
                             fontSize: 'clamp(1.1rem, 2vw, 1.3rem)',
@@ -159,7 +164,7 @@ const Experience = () => {
                           </h5>
                           <h6 style={{
                             fontSize: 'clamp(0.95rem, 1.8vw, 1.05rem)',
-                            color: '#6b7280',
+                            color: darkMode ? '#9ca3af' : '#6b7280',
                             marginBottom: '0.3rem',
                             fontWeight: '600',
                           }}>
@@ -211,7 +216,7 @@ const Experience = () => {
                     <p style={{
                       fontSize: 'clamp(0.9rem, 1.5vw, 1rem)',
                       lineHeight: '1.7',
-                      color: '#4b5563',
+                      color: darkMode ? '#d1d5db' : '#4b5563',
                       margin: 0,
                     }}>
                       {exp.description}
@@ -225,7 +230,7 @@ const Experience = () => {
                       className="expand-btn"
                       style={{
                         border: 'none',
-                        background: 'none',
+                        background: darkMode ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.03)',
                         color: exp.color,
                         fontSize: '0.9rem',
                         fontWeight: '600',
@@ -235,6 +240,12 @@ const Experience = () => {
                         display: 'flex',
                         alignItems: 'center',
                         gap: '0.5rem',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.target.style.background = darkMode ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.05)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.background = darkMode ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.03)';
                       }}
                     >
                       {expandedCard === exp.id ? '📖 Show Less' : '📖 Read More'}
@@ -246,7 +257,7 @@ const Experience = () => {
                     <p style={{
                       fontSize: '0.85rem',
                       fontWeight: '600',
-                      color: '#6b7280',
+                      color: darkMode ? '#9ca3af' : '#6b7280',
                       marginBottom: '0.5rem',
                     }}>
                       🛠️ Technologies:
@@ -259,8 +270,8 @@ const Experience = () => {
                           style={{
                             fontSize: '0.85rem',
                             padding: '0.4rem 0.9rem',
-                            background: `${exp.color}15`,
-                            color: exp.color,
+                            background: darkMode ? `${exp.color}25` : `${exp.color}15`,
+                            color: darkMode ? '#60a5fa' : exp.color,
                             borderRadius: '0.5rem',
                             border: `1px solid ${exp.color}30`,
                             fontWeight: '600',
@@ -276,6 +287,8 @@ const Experience = () => {
             </div>
           ))}
         </div>
+        
+        
       </div>
     </div>
   );
